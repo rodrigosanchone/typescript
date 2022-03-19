@@ -33,6 +33,9 @@ function getSum(num1:number, num2:number):number{
     return num1 +num2;
 }
 
+//Interface
+
+
 getSum(4,10);
 
 
@@ -59,4 +62,51 @@ function getName(firsName:string,
 
 
 //document.write(getName("Pablo","Solo"));
+
+//interface
+interface ITodo{
+    title: string;
+    text:string;
+}
+
+function showTodo(todo:ITodo){
+    console.log(`${todo.title} -${todo.text}`)
+ }
+
+ let myTodo: ITodo={
+     title: 'Eat breakfast',
+     text: 'Lorem'
+ }
+
+ showTodo(myTodo);
+ 
+/*  showTodo({
+     title:'Eat Dinner',
+     text: 'Lorem'
+ }); */
+
+ //clases
+ class User{
+     name: string;
+     email: string;
+     age: number;
+
+     constructor(name){
+         this.name =name;
+     }
+
+     register(){
+         console.log(`${this.name} is registered!`)
+     }
+
+     showMeAge(){
+         return this.age;
+     }
+ }
+
+ var Jhon = new User('Jhon');
+
+ console.log(Jhon.register())
+
+ document.write(Jhon.email)
 

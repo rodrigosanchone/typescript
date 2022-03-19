@@ -23,6 +23,7 @@ var myUndefined = undefined; //tipo de dato undefinido
 function getSum(num1, num2) {
     return num1 + num2;
 }
+//Interface
 getSum(4, 10);
 var mySum = function (num1, num2) {
     if (typeof (num1) === 'string') {
@@ -39,4 +40,31 @@ function getName(firsName, lastName) {
     }
     return "".concat(firsName, "  ").concat(lastName);
 }
-//document.write(getName("Pablo","Solo"));
+function showTodo(todo) {
+    console.log("".concat(todo.title, " -").concat(todo.text));
+}
+var myTodo = {
+    title: 'Eat breakfast',
+    text: 'Lorem'
+};
+showTodo(myTodo);
+/*  showTodo({
+     title:'Eat Dinner',
+     text: 'Lorem'
+ }); */
+//clases
+var User = /** @class */ (function () {
+    function User(name) {
+        this.name = name;
+    }
+    User.prototype.register = function () {
+        console.log("".concat(this.name, " is registered!"));
+    };
+    User.prototype.showMeAge = function () {
+        return this.age;
+    };
+    return User;
+}());
+var Jhon = new User('Jhon');
+console.log(Jhon.register());
+document.write(Jhon.email);
